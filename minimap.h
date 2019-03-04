@@ -36,16 +36,16 @@ namespace Minimap
 namespace Internal
 {
 
-class Minimap : public ExtensionSystem::IPlugin
+class QMinimap : public ExtensionSystem::IPlugin
 {
    Q_OBJECT
    Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QtCreatorPlugin" FILE
                          "Minimap.json")
 
 public:
-   Minimap();
+   QMinimap();
 
-   ~Minimap();
+   ~QMinimap();
 
    bool initialize(const QStringList& arguments, QString* errorString);
    void extensionsInitialized();

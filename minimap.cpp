@@ -33,15 +33,15 @@ namespace Minimap
 {
 namespace Internal
 {
-Minimap::Minimap()
+QMinimap::QMinimap()
 {
 }
 
-Minimap::~Minimap()
+QMinimap::~QMinimap()
 {
 }
 
-bool Minimap::initialize(const QStringList& arguments, QString* errorMessage)
+bool QMinimap::initialize(const QStringList& arguments, QString* errorMessage)
 {
    Q_UNUSED(arguments)
    Q_UNUSED(errorMessage)
@@ -52,16 +52,16 @@ bool Minimap::initialize(const QStringList& arguments, QString* errorMessage)
 
    Core::EditorManager* em = Core::EditorManager::instance();
    connect(em, &Core::EditorManager::editorCreated, this,
-           &Minimap::editorCreated);
+           &QMinimap::editorCreated);
 
    return true;
 }
 
-void Minimap::extensionsInitialized()
+void QMinimap::extensionsInitialized()
 {
 }
 
-ExtensionSystem::IPlugin::ShutdownFlag Minimap::aboutToShutdown()
+ExtensionSystem::IPlugin::ShutdownFlag QMinimap::aboutToShutdown()
 {
    MinimapStyle* style = qobject_cast<MinimapStyle*>(qApp->style());
    if (style)
@@ -71,7 +71,7 @@ ExtensionSystem::IPlugin::ShutdownFlag Minimap::aboutToShutdown()
    return SynchronousShutdown;
 }
 
-void Minimap::editorCreated(Core::IEditor* editor, const QString& fileName)
+void QMinimap::editorCreated(Core::IEditor* editor, const QString& fileName)
 {
    Q_UNUSED(fileName);
    TextEditor::BaseTextEditor* baseEditor =
